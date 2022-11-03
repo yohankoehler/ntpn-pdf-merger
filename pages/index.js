@@ -12,14 +12,10 @@ export default function Home() {
       </Head>
 
       <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
         <Merger
           files={[
-            "http://localhost:3000/pdfs/K.pdf",
-            "http://localhost:3000/pdfs/L.pdf",
+            // "http://localhost:3000/pdfs/K.pdf",
+            // `${window.location.protocol}//${window.location.host}/pdfs/L.pdf`,
           ]}
         />
       </main>
