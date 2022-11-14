@@ -11,7 +11,7 @@ body {
 }
 
 main {
-  padding: 5rem 0;
+  padding: 1rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -32,4 +32,51 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.errorChars {
+  background-color: #ffebee ;
+  padding: 1rem;
+}
+
+.layout {
+  display: flex;;
+}
+
+.errorList {
+  list-style-type: none;
+  padding: 0;
+  display: flex;;
+}
+
+kbd {
+  border: 2px solid black; 
+  box-shadow: 2px 2px black; 
+  font-size: .85em; 
+  line-height: .85em; 
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: .05em; 
+  padding: 3px 5px;
+  white-space: nowrap;
+}
+
+.specialCharsList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style-type: none;
+  padding:0;
+}
+
+.specialCharsList li {
+  border: 1px solid black;
+  margin:0 -1px -1px 0;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.specialCharsList li:active {
+ background-color: black;
+ color: white;
 }
