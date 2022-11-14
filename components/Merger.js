@@ -1,6 +1,6 @@
 import PDFMerger from "pdf-merger-js/browser";
 import React, { useEffect, useState } from "react";
-
+import {DebounceInput} from 'react-debounce-input';
 const charMap = {
   a: "A",
   à: "à",
@@ -147,8 +147,9 @@ const Merger = () => {
           </a>
         </div>
       )}
-      <input
+      <DebounceInput
         type="text"
+        debounceTimeout={300}
         onChange={handleChange}
         style={{ marginBottom: "1rem", width: "500px" }}
         value={inputValue}
