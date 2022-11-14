@@ -96,14 +96,6 @@ const Merger = () => {
     const finalFiles = [];
     const finalErrors = [];
     for (let c of inputValue.replace(/\s/g, "")) {
-      console.log(
-        "loading",
-        c,
-        `${window.location.protocol}//${window.location.host}/pdfs/${
-          charMap[c.toLowerCase()]
-        }.pdf`
-      );
-
       charMap[c.toLowerCase()]
         ? finalFiles.push(
             `${window.location.protocol}//${window.location.host}/pdfs/${
