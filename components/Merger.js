@@ -80,12 +80,16 @@ const Merger = () => {
 
   const handleChange = async (event) => {
     setInputValue(event.target.value);
-
-    console.log("inputValue", inputValue);
   };
 
   const handleCharlistClick = (char) => {
     setInputValue(inputValue + char);
+  };
+
+  const handlePrint = () => {
+    var iframe = document.getElementsByTagName("iframe")[0];
+    iframe.contentWindow.focus();
+    iframe.contentWindow.print();
   };
 
   useEffect(() => {
@@ -114,8 +118,6 @@ const Merger = () => {
 
   useEffect(() => {
     const render = async () => {
-      console.log("pdfsss", files.files);
-
       for (const file of files) {
         await merger.add(file);
       }
@@ -130,11 +132,21 @@ const Merger = () => {
       throw err;
     });
 
-    () => setMergedPdfUrl({});
+    () => setMergedPdfUrl(undefined);
   }, [files, setMergedPdfUrl, errors]);
 
   return (
     <>
+      {files.length > 0 && (
+        <div className="actions">
+          <button className="action" onClick={handlePrint}>
+            🖨️ imprimer
+          </button>
+          <a className="action" href={`${mergedPdfUrl}`} download>
+            ⬇️ télécharger
+          </a>
+        </div>
+      )}
       <input
         type="text"
         onChange={handleChange}
@@ -142,7 +154,7 @@ const Merger = () => {
         value={inputValue}
       />
       <div>
-        Aide à la saisie (clickez pour ajouter)
+        Aide à la saisie (cliquez pour ajouter)
         <ul className="specialCharsList">
           {Object.keys(helpedChars).map((c) => {
             return (

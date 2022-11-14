@@ -80,3 +80,21 @@ kbd {
  background-color: black;
  color: white;
 }
+
+.action {
+  text-decoration: none;
+  font-size: 1rem;
+  border: 1px solid;
+  padding: 0.25rem;
+  background-color: #ebebeb;
+  cursor: pointer;
+}
+
+.action:first-of-type {
+  margin-right: 1rem;
+}
+
+.actions {
+  display: flex;
+  margin-bottom: 1rem;
+}
