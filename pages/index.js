@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Next.js Starter!</title>
+        <title>Collage PDF maker NT</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
