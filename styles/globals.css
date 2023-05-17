@@ -100,11 +100,21 @@ kbd {
   width: 100%;
 }
 
-.preview-item {
+.preview-container-xl .preview-item {
   height: 2rem;
+}
+
+.preview-container-m .preview-item {
+  height: 1.5rem;
+}
+
+.preview-item {
   margin: 2rem 0;
 }
 
+.preview-container-m .preview-item-space {
+  width: 1rem;
+}
 .preview-item-space {
   width: 28px;
 }

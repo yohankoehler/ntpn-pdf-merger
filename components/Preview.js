@@ -3,7 +3,10 @@ import {charMap} from "./../utils/const.js";
 import React, { useEffect, useState } from "react";
 
 
-const Preview = ({ sentence }) => {
+const Preview = ({ sentence, size }) => {
+
+    
+
     const [files, setFiles] = useState([]);
     useEffect(() => {
         const finalFiles = [];
@@ -21,7 +24,7 @@ const Preview = ({ sentence }) => {
         // setErrors(finalErrors);
       }, [sentence]);
 
-    return <div className="preview-container">
+    return <div className={`preview-container preview-container-${ size || 'xl'}`}>
         {files.map((file)=> file === "space" ? <div className="preview-item-space"></div> : <img className="preview-item" src={file} />)}
     </div>
 }

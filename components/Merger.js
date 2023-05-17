@@ -68,6 +68,8 @@ const Merger = () => {
 
   return (
     <>
+      <Preview size="m" sentence={"générateur de slogan"} />
+
       <DebounceInput
         type="text"
         debounceTimeout={300}
