@@ -1,68 +1,8 @@
 import PDFMerger from "pdf-merger-js/browser";
 import React, { useEffect, useState } from "react";
-import {DebounceInput} from 'react-debounce-input';
-const charMap = {
-  a: "A",
-  à: "à",
-  â: "â",
-  b: "B",
-  c: "C",
-  ç: "C",
-  d: "D",
-  e: "E",
-  é: "é",
-  è: "è",
-  ê: "ê",
-  f: "F",
-  g: "G",
-  h: "H",
-  i: "I",
-  î: "î",
-  ï: "ï",
-  j: "J",
-  k: "K",
-  l: "L",
-  m: "M",
-  n: "N",
-  o: "O",
-  ô: "ô",
-  p: "P",
-  q: "Q",
-  r: "R",
-  s: "S",
-  t: "T",
-  u: "U",
-  û: "û",
-  v: "V",
-  w: "W",
-  x: "X",
-  y: "Y",
-  z: "Z",
-  "?": "interro",
-  "'": "apostrophe",
-  "%": "pourcentage",
-  "/": "barre oblique",
-  ":": "deuxpoints",
-  "#": "hashtag",
-  ".": "point",
-  "!": "pt exclamation",
-  ",": "virgule",
-  "-": "tiret",
-  "=": "égal",
-  "≠": "inégal",
-  0: "0",
-  1: "1",
-  2: "2",
-  3: "3",
-  4: "4",
-  5: "5",
-  6: "6",
-  7: "7",
-  8: "8",
-  9: "9",
-  "♈": "clito",
-  "✊": "poing féministe",
-};
+import { DebounceInput } from 'react-debounce-input';
+import Preview from "./Preview";
+import {charMap} from "./../utils/const.js";
 
 const helpedChars = {
   "♈": "clito",
@@ -98,10 +38,9 @@ const Merger = () => {
     for (let c of inputValue.replace(/\s/g, "")) {
       charMap[c.toLowerCase()]
         ? finalFiles.push(
-            `${window.location.protocol}//${window.location.host}/pdfs/${
-              charMap[c.toLowerCase()]
-            }.pdf`
-          )
+          `${window.location.protocol}//${window.location.host}/pdfs/${charMap[c.toLowerCase()]
+          }.pdf`
+        )
         : finalErrors.push(c);
     }
     setFiles(finalFiles);
@@ -129,29 +68,20 @@ const Merger = () => {
 
   return (
     <>
-      {files.length > 0 && (
-        <div className="actions">
-          <button className="action" onClick={handlePrint}>
-            🖨️ imprimer
-          </button>
-          <a className="action" href={`${mergedPdfUrl}`} download>
-            ⬇️ télécharger
-          </a>
-        </div>
-      )}
       <DebounceInput
         type="text"
         debounceTimeout={300}
         onChange={handleChange}
-        style={{ marginBottom: "1rem", width: "500px" }}
+        style={{  width: "500px", maxWidth:"100%", margin: "0 1rem 1rem 1rem" }}
         value={inputValue}
       />
+
       <div>
         Aide à la saisie (cliquez pour ajouter)
         <ul className="specialCharsList">
           {Object.keys(helpedChars).map((c) => {
             return (
-              <li
+              <li className="action"
                 onClick={() => {
                   handleCharlistClick(c);
                 }}
@@ -162,6 +92,9 @@ const Merger = () => {
           })}
         </ul>
       </div>
+
+      <Preview sentence={inputValue} />
+
       <div className="layout">
         {errors.length > 0 && (
           <div className="errorChars">
@@ -177,14 +110,25 @@ const Merger = () => {
           </div>
         )}
 
+        {files.length > 0 && (
+          <div className="actions">
+            <button className="action" onClick={handlePrint}>
+              🖨️ imprimer
+            </button>
+            <a className="action" href={`${mergedPdfUrl}`} download>
+              ⬇️ télécharger
+            </a>
+          </div>
+        )}
+
         {!mergedPdfUrl ? (
           <>Loading</>
         ) : (
           <iframe
-            height={800}
+            height="0"
             src={`${mergedPdfUrl}`}
             title="pdf-viewer"
-            width="100%s"
+            width="0"
           ></iframe>
         )}
       </div>

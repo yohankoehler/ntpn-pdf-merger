@@ -66,12 +66,10 @@ kbd {
   grid-template-columns: repeat(3, 1fr);
   list-style-type: none;
   padding:0;
+  grid-gap: 1rem;
 }
 
 .specialCharsList li {
-  border: 1px solid black;
-  margin:0 -1px -1px 0;
-  padding: 10px;
   cursor: pointer;
   text-align: center;
 }
@@ -90,11 +88,23 @@ kbd {
   cursor: pointer;
 }
 
-.action:first-of-type {
-  margin-right: 1rem;
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
 }
 
-.actions {
+.preview-container {
   display: flex;
-  margin-bottom: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.preview-item {
+  height: 2rem;
+  margin: 2rem 0;
+}
+
+.preview-item-space {
+  width: 28px;
 }
