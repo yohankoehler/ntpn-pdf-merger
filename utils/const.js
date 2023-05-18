@@ -57,6 +57,6 @@ export const charMap = {
     7: "7",
     8: "8",
     9: "9",
-    "♈": "clito",
-    "✊": "poing féministe",
+    "λ": "clito",
+  "φ": "poing féministe",
   };

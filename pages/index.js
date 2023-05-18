@@ -1,16 +1,18 @@
 import Head from "next/head";
 import Merger from "@components/Merger";
-import localFont from '@next/font/local';
-const myFont = localFont({ src: './Ntpn-Regular.ttf' });
+
 export default function Home() {
   return (
     <div>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>HTML 5 Boilerplate</title>
         <title>Collage PDF maker NT</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={myFont.className}>
+      <main>
         <Merger files={[]} />
       </main>
     </div>

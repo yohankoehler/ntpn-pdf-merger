@@ -1,4 +1,8 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -41,7 +45,7 @@ code {
 
 .layout {
   display: flex;;
-}
+} */
 
 .errorList {
   list-style-type: none;
@@ -61,7 +65,7 @@ kbd {
   white-space: nowrap;
 }
 
-.specialCharsList {
+/* .specialCharsList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   list-style-type: none;
@@ -117,4 +121,4 @@ kbd {
 }
 .preview-item-space {
   width: 28px;
-}
+} */
