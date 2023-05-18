@@ -68,8 +68,7 @@ const Merger = () => {
 
   return (
     <>
-      <Preview size="m" sentence={"générateur de slogan"} />
-
+      <h1>générateur de slogan</h1>
       <DebounceInput
         type="text"
         debounceTimeout={300}
@@ -94,8 +93,7 @@ const Merger = () => {
           })}
         </ul>
       </div>
-
-      <Preview sentence={inputValue} />
+      <h1>{inputValue}</h1>
 
       <div className="layout">
         {errors.length > 0 && (
