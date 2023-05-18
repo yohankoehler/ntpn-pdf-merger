@@ -1,6 +1,5 @@
 import PDFMerger from "pdf-merger-js/browser";
 import React, { useEffect, useState } from "react";
-import { DebounceInput } from 'react-debounce-input';
 import { charMap } from "./../utils/const.js";
 import localFont from '@next/font/local';
 const myFont = localFont({ src: '../pages/Ntpn-Regular.ttf' });
