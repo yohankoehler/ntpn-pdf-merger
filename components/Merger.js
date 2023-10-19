@@ -4,11 +4,6 @@ import { charMap } from "./../utils/const.js";
 import localFont from "@next/font/local";
 const myFont = localFont({ src: "../pages/Ntpn-Regular.ttf" });
 const myFont2 = localFont({ src: "../pages/Ntpn2-Regular.ttf" });
-const helpedChars = {
-  λ: "clito",
-  φ: "poing féministe",
-  "≠": "inégal",
-};
 
 const fonts = {
   font1: {
@@ -68,8 +63,6 @@ const Merger = () => {
 
   useEffect(() => {
     const render = async () => {
-      console.log("files", files);
-
       for (const file of files) {
         await merger.add(file);
       }
