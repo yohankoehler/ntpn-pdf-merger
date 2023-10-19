@@ -63,6 +63,11 @@ export const charMap = {
       λ: "clito",
       φ: "poing féministe",
     },
+    helpedChars: {
+      λ: "clito",
+      φ: "poing féministe",
+      "≠": "inégal",
+    },
   },
 
   "Ntpn2-Regular": {
@@ -104,6 +109,7 @@ export const charMap = {
       x: "X",
       y: "Y",
       z: "Z",
+      '"': "openquote",
       "?": "interro",
       "'": "apostrophe",
       "%": "pourcentage",
@@ -128,6 +134,17 @@ export const charMap = {
       9: "9",
       λ: "clito",
       φ: "poing féministe",
+      "«": "openquote",
+      "»": "closequote",
+      "…": "suspension",
+    },
+    helpedChars: {
+      λ: "clito",
+      φ: "poing féministe",
+      "≠": "inégal",
+      "«": "openquote",
+      "»": "closequote",
+      "…": "suspension",
     },
   },
 };

@@ -126,11 +126,11 @@ const Merger = () => {
         <p className="mb-2">
           Ajoutez un ou des symboles (cliquer pour ajouter)
         </p>
-        <ul className="inline-grid grid-cols-3 gap-2 mb-8">
-          {Object.keys(helpedChars).map((c) => {
+        <ul className="inline-flex gap-2 mb-8">
+          {Object.keys(charMap[currentFont.name].helpedChars).map((c) => {
             return (
               <li
-                className={`${currentFont.font.className} bg-[#a132b8] hover:bg-[#cc74e0]  text-white font-bold py-2 px-4 rounded inline-flex items-center`}
+                className={`${currentFont.font.className} bg-[#a132b8] hover:bg-[#cc74e0]  text-white font-bold py-2 px-4 rounded inline-flex items-center cursor-pointer`}
                 onClick={() => {
                   handleCharlistClick(c);
                 }}
@@ -142,18 +142,16 @@ const Merger = () => {
         </ul>
       </div>
       {charCount > 0 && (
-        <>
-          <p className="text-center">
-            Apperçu de votre slogan ({charCount} pages)
-          </p>
-          <div className="flex  items-center justify-center my-5">
-            <select value={currentFont.key} onChange={handleSelect}>
-              <option value="font1">Font 1</option>
-              <option value="font2">Font 2</option>
-            </select>
-          </div>
-        </>
+        <p className="text-center">
+          Apperçu de votre slogan ({charCount} pages)
+        </p>
       )}
+      <div className="flex  items-center justify-center my-5">
+        <select value={currentFont.key} onChange={handleSelect}>
+          <option value="font1">Font 1</option>
+          <option value="font2">Font 2</option>
+        </select>
+      </div>
       <h1
         className={`tracking-wide text-3xl ${currentFont.font.className} text-center mb-8 leading-relaxed`}
       >
